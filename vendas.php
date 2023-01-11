@@ -19,19 +19,29 @@
                 </SCRIPT>"
             );
         } else {
-            $id_produto = "SELECT id_produto FROM produtos where Descricao like '%".$prod_comp."%'";
-            $id_produto = mysqli_query($link, $id_produto);
+            $consulta_produt = "SELECT Descricao FROM produtos WHERE Descricao like '%".$prod_comp."%'";
+            $result3 = mysqli_query($link, $consulta_produt);
+            if (mysqli_num_rows($result3) == 0) {
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Este produto não está cadastrado no banco de dados!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            } else {
+                $id_produto = "SELECT id_produto FROM produtos where Descricao like '%".$prod_comp."%'";
+                $id_produto = mysqli_query($link, $id_produto);
 
-            $row = $id_produto->fetch_array(MYSQLI_NUM);
+                $row = $id_produto->fetch_array(MYSQLI_NUM);
 
-            $inserir_reg_venda = "INSERT INTO itensvenda(id_produto, quantidade) VALUES ($row[0], $qtd_comp)";
-            $result = mysqli_query($link, $inserir_reg_venda);
+                $inserir_reg_venda = "INSERT INTO itensvenda(id_produto, quantidade) VALUES ($row[0], $qtd_comp)";
+                $result = mysqli_query($link, $inserir_reg_venda);
 
-            echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('Pedido de venda inserido com sucesso!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
-                </SCRIPT>"
-            );
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Pedido de venda inserido com sucesso!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            }
         }
         
     } else {
