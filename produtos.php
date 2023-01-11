@@ -88,6 +88,7 @@
         } else {
             $consulta_prod = "SELECT Descricao FROM produtos WHERE Descricao = '$produto'";
             $result = mysqli_query($link, $consulta_prod);
+            echo var_dump($result);
             if(mysqli_num_rows($result) == 0){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado no banco de dados!')
@@ -123,15 +124,17 @@
                 </SCRIPT>"
             );
         } else {
-            $delete_prod = "DELETE FROM produtos WHERE id_produto = $id_product";
-            $result = mysqli_query($link, $delete_prod);
-            if(mysqli_num_rows($result) == 0){
+            $cons_produto = "SELECT Descricao FROM produtos WHERE Descricao = '$prod_name'";
+            $result1 = mysqli_query($link, $cons_produto);
+            if(mysqli_num_rows($result1) == 0){
                 echo("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado em seu banco de dados!')
                     window.location.href='http://localhost/DesafioPCP/index.html';
                     </SCRIPT>"
                 );
             } else {
+                $delete_prod = "DELETE FROM produtos WHERE id_produto = $id_product";
+                $result = mysqli_query($link, $delete_prod);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Produto removido com sucesso!')
                     window.location.href='http://localhost/DesafioPCP/index.html';
