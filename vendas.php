@@ -52,15 +52,23 @@
                 </SCRIPT>"
             );
         } else {
-            $delete_reg_venda = "DELETE FROM itensvenda WHERE id_venda = '$id_venda' AND id_produto = '$id_produto'";
-            $result = mysqli_query($link, $delete_reg_venda);
-            
-            echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('Pedido de venda removido com sucesso!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
-                </SCRIPT>"
-            );
-
+            $itemvenda_consulta = "SELECT id_venda FROM itensvenda WHERE id_venda = $id_venda";
+            $result2 = mysqli_query($link, $itemvenda_consulta);
+            if (mysqli_num_rows($result2) == 0) {
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Este pedido de venda não está cadastrado no banco de dados!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            } else {
+                $delete_reg_venda = "DELETE FROM itensvenda WHERE id_venda = '$id_venda' AND id_produto = '$id_produto'";
+                $result = mysqli_query($link, $delete_reg_venda);
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Pedido de venda removido com sucesso!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            }
         }
     }
 ?>
