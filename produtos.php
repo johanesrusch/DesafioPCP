@@ -52,7 +52,13 @@
         } else {
             $selecionar_qtd_estoque = " SELECT Descricao, Estoque FROM produtos where  Descricao like '%".$descricao."%'";
             $result = mysqli_query($link, $selecionar_qtd_estoque);
-
+            if(mysqli_num_rows($result) == 0){
+                echo("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Este produto não está cadastrado em seu banco de dados!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            }
             $row = $result->fetch_array(MYSQLI_NUM);
             
             printf("Quantidade de %s em estoque: %s !\n", $row[0], $row[1]);
@@ -84,7 +90,7 @@
             $result = mysqli_query($link, $consulta_prod);
             if(mysqli_num_rows($result) == 0){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
-                    window.alert('Este produto não está inserido no banco de dados!')
+                    window.alert('Este produto não está cadastrado no banco de dados!')
                     window.location.href='http://localhost/DesafioPCP/index.html';
                     </SCRIPT>"
                 );
@@ -119,11 +125,19 @@
         } else {
             $delete_prod = "DELETE FROM produtos WHERE id_produto = $id_product";
             $result = mysqli_query($link, $delete_prod);
-            echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('Produto removido com sucesso!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
-                </SCRIPT>"
-            );
+            if(mysqli_num_rows($result) == 0){
+                echo("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Este produto não está cadastrado em seu banco de dados!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            } else {
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Produto removido com sucesso!')
+                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    </SCRIPT>"
+                );
+            }
         }
         
     }
