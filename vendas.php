@@ -28,21 +28,34 @@
                     </SCRIPT>"
                 );
             } else {
-                $id_produto = "SELECT id_produto FROM produtos where Descricao like '%".$prod_comp."%'";
+                $id_produto = "SELECT id_produto, Estoque FROM produtos where Descricao like '%".$prod_comp."%'";
                 $id_produto = mysqli_query($link, $id_produto);
 
                 $row = $id_produto->fetch_array(MYSQLI_NUM);
+                
+                if ($row[1] <= 0) {
+                    echo ("<SCRIPT LANGUAGE='JavaScript'>
+                        window.alert('Este produto está sem estoque no momento!')
+                        window.location.href='http://localhost/DesafioPCP/index.html';
+                        </SCRIPT>"
+                    );
+                } else {
+                    $inserir_reg_venda = "INSERT INTO itensvenda(id_produto, quantidade) VALUES ($row[0], $qtd_comp)";
+                    $result = mysqli_query($link, $inserir_reg_venda);
 
-                $inserir_reg_venda = "INSERT INTO itensvenda(id_produto, quantidade) VALUES ($row[0], $qtd_comp)";
-                $result = mysqli_query($link, $inserir_reg_venda);
-
-                echo ("<SCRIPT LANGUAGE='JavaScript'>
-                    window.alert('Pedido de venda inserido com sucesso!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
-                    </SCRIPT>"
-                );
+                    echo ("<SCRIPT LANGUAGE='JavaScript'>
+                        window.alert('Pedido de venda inserido com sucesso!')
+                        window.location.href='http://localhost/DesafioPCP/index.html';
+                        </SCRIPT>"
+                    );
+                }
             }
         }
+
+
+
+
+
         
     } else {
 
