@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Pedidos de Venda</title>
+</head>
+<body>
+    <nav>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="http://localhost/DesafioPCP/index.html">Voltar</a></li>
+        </ul>
+    </nav>
+    <div id="registro_venda">
+        <h1>Inserir um Registro de Vendas</h1><br>
+        <form action="vendas.php" method="post">
+          <input type="hidden" name="operation" id="operation" value="adicionar_registro_venda"><br>
+          <label for="produto_comprado">Nome do Produto Adquirido:</label><br>
+          <input type="text" name="produto_comprado" id="produto_comprado"><br>
+          <label for="qtd_comprada">Quantidade Adquirida:</label><br>
+          <input type="number" name="qtd_comprada" id="qtd_comprada"><br>
+          <button type="submit">Confirmar</button>
+        </form>
+    </div>
+    <div id="consulta_pedido_venda">
+      <h1>Consulta de Pedido de Venda</h1><br>
+      <form action="vendas.php" method="post">
+        <input type="hidden" name="operation" id="operation" value="consulta_pedido_venda"><br>
+        <label for="id_pedido_venda"> Identificador do pedido de venda:</label><br>
+        <input type="text" name="id_pedido_venda" id="id_pedido_venda"><br>
+        <button type="submit">Consultar</button><br>
+      </form>
+  </div>
+    <div id="deletar_registro_venda">
+        <h1>Remover um Registro de Vendas</h1><br>
+        <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
+        <form action="vendas.php" method="post">
+          <input type="hidden" name="operation" id="operation" value="remover_registro_venda"><br>
+          <label for="id_venda">Identificador da Venda:</label><br>
+          <input type="number" name="id_venda" id="id_venda"><br>
+          <label for="id_produto">Identificador do Produto:</label><br>
+          <input type="number" name="id_produto" id="id_produto"><br>
+          <button type="submit">Remover</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

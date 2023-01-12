@@ -11,13 +11,13 @@
         if($nome_prod == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o nome do produto para incluí-lo no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } elseif ($qtd_ini == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher a quantidade inicial do produto para incluí-lo no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } else {

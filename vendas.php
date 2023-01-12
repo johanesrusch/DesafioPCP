@@ -51,6 +51,12 @@
                 }
             }
         } 
+    } elseif ($operation == "consulta_pedido_venda") {
+        echo ("<SCRIPT LANGUAGE='JavaScript'>
+                window.alert('jlhaBVSCLJAS!!')
+                window.location.href='http://localhost/DesafioPCP/index.html';
+                </SCRIPT>"
+            );
     } else {
 
         $id_venda = $_POST["id_venda"];
