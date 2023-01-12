@@ -32,7 +32,7 @@
                 $id_produto = mysqli_query($link, $id_produto);
 
                 $row = $id_produto->fetch_array(MYSQLI_NUM);
-                
+
                 if ($row[1] <= 0) {
                     echo ("<SCRIPT LANGUAGE='JavaScript'>
                         window.alert('Este produto está sem estoque no momento!')
@@ -50,13 +50,7 @@
                     );
                 }
             }
-        }
-
-
-
-
-
-        
+        } 
     } else {
 
         $id_venda = $_POST["id_venda"];

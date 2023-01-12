@@ -63,6 +63,15 @@
           <button type="submit">Confirmar</button>
         </form>
     </div>
+    <div id="consulta_pedido_venda">
+      <h1>Consulta de Pedido de Venda</h1><br>
+      <form action="vendas.php" method="post">
+        <input type="hidden" name="operation" id="operation" value="consulta_pedido_venda"><br>
+        <label for="id_pedido_venda"> Identificador do pedido de venda:</label><br>
+        <input type="text" name="id_pedido_venda" id="id_pedido_venda"><br>
+        <button type="submit">Consultar</button><br>
+      </form>
+  </div>
     <div id="deletar_registro_venda">
         <h1>Remover um Registro de Vendas</h1><br>
         <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
