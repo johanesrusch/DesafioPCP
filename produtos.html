@@ -9,96 +9,99 @@
     <title>Produtos</title>
 </head>
 <body>
-    <nav>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="http://localhost/DesafioPCP/index.html">Voltar</a></li>
-        </ul>
-      </nav>
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#inserir_dados">Inserir Dados</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#consulta_estoque">Consulta de Estoque</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#atualizar_estoque">Atualizar o estoque</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#remover_produto">Remover Produto</a>
-          </li>
-      </ul>
-
-      <div class="tab-content">
-        <div id="inserir_dados" class="tab-pane container fade">
-            <h1>Inserir Novos Produtos ao Estoque</h1><br>
-            <form action="produtos.php" method="post">
-              <input type="hidden" name="operacao" id="operacao" value="cadastro_produto"><br>
-              <label for="nome_produto">Nome do Produto:</label><br>
-              <input type="text" name="nome_produto" id="nome_produto"><br>
-              <label for="qtd_ini_estoque">Quantidade Inicial em Estoque:</label><br>
-              <input type="number" name="qtd_ini_estoque" id="qtd_ini_estoque"><br>
-              <button type="submit">Inserir Produto</button>
-            </form>
-        </div>
-        <div id="consulta_estoque" class="tab-pane container active">
-            <h1>Consulta de Estoque</h1><br>
-            <form action="produtos.php" method="post">
-              <input type="hidden" name="operacao" id="operacao" value="consulta_produto"><br>
-              <label for="produto">Nome do Produto:</label><br>
-              <input type="text" name="produto" id="produto">
-              <button type="submit">Consultar</button><br>
-            </form>
-        </div>
-        <div id="atualizar_estoque" class="tab-pane container fade">
-            <h1>Atualizar o Estoque</h1><br>
-            <h4>Este módulo deve ser usado para inserir estoque a um produto já existente.</h4><br>
-            <form action="produtos.php" method="post">
-              <input type="hidden" name="operacao" id="operacao" value="inserir_estoque"><br>
-              <label for="nome_prod">Produto:</label><br>
-              <input type="text" name="nome_prod" id="nome_prod"><br>
-              <label for="quantidade">Quantidade:</label><br>
-              <input type="number" name="quantidade" id="quantidade"><br>
-              <button type="submit">Adicionar</button>
-            </form>
-        </div>
-        <div id="remover_produto" class="tab-pane container fade">
-            <h1>Remover produto</h1><br>
-            <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
-            <form action="produtos.php" method="post">
-              <input type="hidden" name="operacao" id="operacao" value="remover_produto"><br>
-              <label for="id_product">Identificador do Produto</label><br>
-              <input type="number" name="id_product" id="id_product"><br>
-              <label for="product_name">Nome do Produto:</label><br>
-              <input type="text" name="product_name" id="product_name"><br>
-              <button type="submit">Remover</button>
-            </form>
-        </div>
-      </div>
-      <div class="container mt-3">
-        <h2>Produtos Cadastrados</h2>
-        <p>Aqui estão listados os produtos cadastrados em seu banco de dados.</p>            
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Identificador do Produto</th>
-              <th>Descrição</th>
-              <th>Estoque</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <a href="http://localhost/DesafioPCP/index.html" class="btn btn-primary">Voltar</a><br>
+  <input type="hidden" name="space" id="space"><br>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#inserir_dados">Inserir Dados</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#consulta_estoque">Consulta de Estoque</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#atualizar_estoque">Atualizar o estoque</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#remover_produto">Remover Produto</a>
+      </li>
+  </ul>
+  <div class="tab-content">
+    <div id="inserir_dados" class="tab-pane container fade">
+        <h1>Inserir Novos Produtos ao Estoque</h1><br>
+        <form action="produtos.php" method="post">
+          <input type="hidden" name="operacao" id="operacao" value="cadastro_produto"><br>
+          <label for="nome_produto">Nome do Produto:</label><br>
+          <input type="text" name="nome_produto" id="nome_produto"><br>
+          <label for="qtd_ini_estoque">Quantidade Inicial em Estoque:</label><br>
+          <input type="number" name="qtd_ini_estoque" id="qtd_ini_estoque"><br>
+          <button type="submit">Inserir Produto</button>
+        </form>
+    </div>
+    <div id="consulta_estoque" class="tab-pane container active">
+        <h1>Consulta de Estoque</h1><br>
+        <form action="produtos.php" method="post">
+          <input type="hidden" name="operacao" id="operacao" value="consulta_produto"><br>
+          <label for="produto">Nome do Produto:</label><br>
+          <input type="text" name="produto" id="produto">
+          <button type="submit">Consultar</button><br>
+        </form>
+    </div>
+    <div id="atualizar_estoque" class="tab-pane container fade">
+        <h1>Atualizar o Estoque</h1><br>
+        <h4>Este módulo deve ser usado para inserir estoque a um produto já existente.</h4><br>
+        <form action="produtos.php" method="post">
+          <input type="hidden" name="operacao" id="operacao" value="inserir_estoque"><br>
+          <label for="nome_prod">Produto:</label><br>
+          <input type="text" name="nome_prod" id="nome_prod"><br>
+          <label for="quantidade">Quantidade:</label><br>
+          <input type="number" name="quantidade" id="quantidade"><br>
+          <button type="submit">Adicionar</button>
+        </form>
+    </div>
+    <div id="remover_produto" class="tab-pane container fade">
+        <h1>Remover produto</h1><br>
+        <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
+        <form action="produtos.php" method="post">
+          <input type="hidden" name="operacao" id="operacao" value="remover_produto"><br>
+          <label for="id_product">Identificador do Produto</label><br>
+          <input type="number" name="id_product" id="id_product"><br>
+          <label for="product_name">Nome do Produto:</label><br>
+          <input type="text" name="product_name" id="product_name"><br>
+          <button type="submit">Remover</button>
+        </form>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <h2>Produtos Cadastrados</h2>
+    <p>Aqui estão listados os produtos cadastrados em seu banco de dados.</p>
+    <?php 
+      include "connection.php" ;
+      $sql = "select * from produtos";
+      $resultado = mysqli_query($link,$sql); ?>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Identificador do Produto</th>
+          <th scope="col">Descrção</th>
+          <th scope="col">Estoque</th>
+        </tr>
+      </thead>
+    <tbody>
+    <?php 
+    while($dados = mysqli_fetch_array($resultado)){
+      $id_produto = $dados['id_produto'];
+      $descricao = $dados['Descricao']; 
+      $estoque = $dados['Estoque'];
+    ?>
+     <tr>
+          <th scope="row"></th>
+          <td><?php $id_produto ?></td>
+          <td><?php $descricao ?></td>
+          <td><?php $estoque ?></td>
+        </tr> 
+     <?php } ?>
+     </tbody>
+  </div>
 </body>
 </html>

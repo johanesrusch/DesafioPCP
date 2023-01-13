@@ -9,93 +9,91 @@
     <title>Pedidos de Venda</title>
 </head>
 <body>
-    <nav>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="http://localhost/DesafioPCP/index.html">Voltar</a></li>
-        </ul>
-    </nav>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#registro_venda">Registrar Pedido de Venda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#consulta_pedido_venda">Consulta de Pedido de Venda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#faturar_pedido_venda">Faturar um Pedido de Venda</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#deletar_registro_venda">Remover Pedido de Venda</a>
-          </li>
-      </ul>
-    <div class="tab-content">
-        <div id="registro_venda" class="tab-pane container fade">
-            <h1>Inserir um Registro de Vendas</h1><br>
-            <form action="vendas.php" method="post">
-              <input type="hidden" name="operation" id="operation" value="adicionar_registro_venda"><br>
-              <label for="produto_comprado">Nome do Produto Adquirido:</label><br>
-              <input type="text" name="produto_comprado" id="produto_comprado"><br>
-              <label for="qtd_comprada">Quantidade Adquirida:</label><br>
-              <input type="number" name="qtd_comprada" id="qtd_comprada"><br>
-              <button type="submit">Confirmar</button>
-            </form>
-        </div>
-        <div id="consulta_pedido_venda" class="tab-pane container active">
-            <h1>Consulta de Pedido de Venda</h1><br>
-            <form action="vendas.php" method="post">
-              <input type="hidden" name="operation" id="operation" value="consulta_pedido_venda"><br>
-              <label for="id_pedido_venda"> Identificador do pedido de venda:</label><br>
-              <input type="text" name="id_pedido_venda" id="id_pedido_venda"><br>
-              <button type="submit">Consultar</button><br>
-            </form>
-        </div>
-        <div id="faturar_pedido_venda" class="tab-pane container fade">
-            <h1>Faturar um Pedido de Venda</h1><br>
-            <form action="vendas.php" method="post">
-              <input type="hidden" name="operation" id="operation" value="faturar_pedido_venda"><br>
-              <label for="id_venda">Identificador da Venda:</label><br>
-              <input type="number" name="id_venda" id="id_venda"><br>
-              <button type="submit">Faturar</button>
-            </form>
-        </div>
-        <div id="deletar_registro_venda" class="tab-pane container fade">
-            <h1>Remover um Registro de Vendas</h1><br>
-            <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
-            <form action="vendas.php" method="post">
-              <input type="hidden" name="operation" id="operation" value="remover_registro_venda"><br>
-              <label for="id_venda">Identificador da Venda:</label><br>
-              <input type="number" name="id_venda" id="id_venda"><br>
-              <label for="id_produto">Identificador do Produto:</label><br>
-              <input type="number" name="id_produto" id="id_produto"><br>
-              <button type="submit">Remover</button>
-            </form>
-        </div>
-    </div>
-    <div>
-      <div class="container mt-3">
-        <h2>Pedidos de Venda Cadastrados</h2>
-        <p>Aqui estão listados os pedidos de venda cadastrados em seu banco de dados.</p>            
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Identificador do Pedido de Venda</th>
-              <th>Identificador do Produto</th>
-              <th>Quantidade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>teste</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>    </div>
+  <a href="http://localhost/DesafioPCP/index.html" class="btn btn-primary">Voltar</a><br>
+  <input type="hidden" name="space" id="space"><br>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#registro_venda">Registrar Pedido de Venda</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#consulta_pedido_venda">Consulta de Pedido de Venda</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#faturar_pedido_venda">Faturar um Pedido de Venda</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#deletar_registro_venda">Remover Pedido de Venda</a>
+      </li>
+  </ul>
+  <div class="tab-content">
+      <div id="registro_venda" class="tab-pane container fade">
+          <h1>Inserir um Registro de Vendas</h1><br>
+          <form action="vendas.php" method="post">
+            <input type="hidden" name="operation" id="operation" value="adicionar_registro_venda"><br>
+            <label for="produto_comprado">Nome do Produto Adquirido:</label><br>
+            <input type="text" name="produto_comprado" id="produto_comprado"><br>
+            <label for="qtd_comprada">Quantidade Adquirida:</label><br>
+            <input type="number" name="qtd_comprada" id="qtd_comprada"><br>
+            <button type="submit">Confirmar</button>
+          </form>
+      </div>
+      <div id="consulta_pedido_venda" class="tab-pane container active">
+          <h1>Consulta de Pedido de Venda</h1><br>
+          <form action="vendas.php" method="post">
+            <input type="hidden" name="operation" id="operation" value="consulta_pedido_venda"><br>
+            <label for="id_pedido_venda"> Identificador do pedido de venda:</label><br>
+            <input type="text" name="id_pedido_venda" id="id_pedido_venda">
+            <button type="submit">Consultar</button><br>
+          </form>
+      </div>
+      <div id="faturar_pedido_venda" class="tab-pane container fade">
+          <h1>Faturar um Pedido de Venda</h1><br>
+          <form action="vendas.php" method="post">
+            <input type="hidden" name="operation" id="operation" value="faturar_pedido_venda"><br>
+            <label for="id_venda">Identificador da Venda:</label><br>
+            <input type="number" name="id_venda" id="id_venda"><br>
+            <button type="submit">Faturar</button>
+          </form>
+      </div>
+      <div id="deletar_registro_venda" class="tab-pane container fade">
+          <h1>Remover um Registro de Vendas</h1><br>
+          <h4>Cuidado com esse módulo, se você remover algum produto terá de cadastrá-lo novamente. !!!</h4><br>
+          <form action="vendas.php" method="post">
+            <input type="hidden" name="operation" id="operation" value="remover_registro_venda"><br>
+            <label for="id_venda">Identificador da Venda:</label><br>
+            <input type="number" name="id_venda" id="id_venda"><br>
+            <label for="id_produto">Identificador do Produto:</label><br>
+            <input type="number" name="id_produto" id="id_produto"><br>
+            <button type="submit">Remover</button>
+          </form>
+      </div>
+  </div>
+  <div>
+    <div class="container mt-3">
+      <h2>Pedidos de Venda Cadastrados</h2>
+      <p>Aqui estão listados os pedidos de venda cadastrados em seu banco de dados.</p>            
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Identificador do Pedido de Venda</th>
+            <th>Identificador do Produto</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>teste</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+  </div>
 </body>
 </html>
