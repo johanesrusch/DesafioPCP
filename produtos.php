@@ -26,7 +26,7 @@
             if(mysqli_num_rows($result) > 0){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Este produto já está inserido em seu banco de dados, verifique se você digitou o nome do produto corretamente ou adicione o produto ao seu estoque!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
              );
             } else {
@@ -34,7 +34,7 @@
                 $result = mysqli_query($link, $inserir_produtos);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Produto inserido com sucesso!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             }
@@ -46,7 +46,7 @@
         if ($descricao == null) {
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o nome do produto para consultar sua quantidade no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } else {
@@ -55,7 +55,7 @@
             if(mysqli_num_rows($result) == 0){
                 echo("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado em seu banco de dados!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             }
@@ -65,7 +65,7 @@
             echo "<br><input type='button' value='Voltar'
                 onclick='voltar()'>";
             echo "<script>
-                function voltar(){ window.location.href='http://localhost/DesafioPCP/index.html';}
+                function voltar(){ window.location.href='http://localhost/DesafioPCP/produtos.html';}
             </script>";
         }
 
@@ -76,13 +76,13 @@
         if($produto == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o nome do produto para inserir seu estoque no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } elseif ($quantidade == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher a quantidade do produto para acrescentá-la ao estoque no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } else {
@@ -92,7 +92,7 @@
             if(mysqli_num_rows($result) == 0){
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado no banco de dados!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             } else {
@@ -100,7 +100,7 @@
                 $result = mysqli_query($link, $inserir_estoque);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Estoque inserido com sucesso!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             }
@@ -114,13 +114,13 @@
         if($id_product == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o identificador do produto para removê-lo do banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } elseif ($prod_name == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o nome do produto para removê-lo do banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/produtos.html';
                 </SCRIPT>"
             );
         } else {
@@ -129,7 +129,7 @@
             if(mysqli_num_rows($result1) == 0){
                 echo("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado em seu banco de dados!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             } else {
@@ -137,7 +137,7 @@
                 $result = mysqli_query($link, $delete_prod);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Produto removido com sucesso!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/produtos.html';
                     </SCRIPT>"
                 );
             }
