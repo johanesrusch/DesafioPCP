@@ -46,7 +46,7 @@
             <form action="produtos.php" method="post">
               <input type="hidden" name="operacao" id="operacao" value="consulta_produto"><br>
               <label for="produto">Nome do Produto:</label><br>
-              <input type="text" name="produto" id="produto"><br>
+              <input type="text" name="produto" id="produto">
               <button type="submit">Consultar</button><br>
             </form>
         </div>
@@ -75,9 +75,30 @@
             </form>
         </div>
       </div>
-    
-    <!-- 
-    
-     -->    
+      <div class="container mt-3">
+        <h2>Produtos Cadastrados</h2>
+        <p>Aqui estão listados os produtos cadastrados em seu banco de dados.</p>            
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Identificador do Produto</th>
+              <th>Descrição</th>
+              <th>Estoque</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </body>
 </html>
