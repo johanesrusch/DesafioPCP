@@ -1,6 +1,6 @@
 <?php 
     include "connection.php" ;
-// Verifica se existe a variável txtnome
+
     $sql = "SELECT * FROM Produtos";
     $result = mysqli_query($link, $sql);
     $cont = mysqli_affected_rows($link);

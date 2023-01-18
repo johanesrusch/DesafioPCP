@@ -12,6 +12,14 @@
 </head>
 <body>
   <script type="text/javascript" src="ajax.js"></script>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="./img/gestão-de-estoque.png" alt="Gestão de Estoque" style="width:50px;" class="rounded"> 
+      </a>
+      <span class="navbar-text h5">Gerenciamento de Estoque</span>
+    </div>
+  </nav>
   <div class="h-25 d-inline-block"></div>
   <ul class="nav nav-tabs">
     <li class="nav-item">
@@ -29,9 +37,6 @@
     <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#remover_produto" name="btnPesquisar" value="Pesquisar" onclick="getDados();">Remover Produto</a>
     </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#consulta_produtos" name="btnPesquisar" value="Pesquisar" onclick="getDados();">Consultar Produtos</a>
-  </li> -->
   </ul>
   <div class="tab-content">
     <div id="inserir_dados" class="tab-pane container fade">
@@ -79,12 +84,13 @@
         </form>
     </div>
     <div class="h-25 d-inline-block"></div>
-  </div>
-  <div class="container">
-    <div id="Resultado"></div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+    </div>
+    <div class="container">
+      <div id="Resultado"></div>
+    </div>
+    <p class="text-white">space</p>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>

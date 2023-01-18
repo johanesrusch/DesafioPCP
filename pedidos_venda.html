@@ -10,22 +10,30 @@
     <title>Pedidos de Venda</title>
 </head>
 <body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="./img/gestão-de-estoque.png" alt="Gestão de Estoque" style="width:50px;" class="rounded"> 
+      </a>
+      <span class="navbar-text h5">Gerenciamento de Estoque</span>
+    </div>
+  </nav>
   <div class="h-25 d-inline-block"></div>
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a href="http://localhost/DesafioPCP/index.html" id="btn" class="nav-link">Voltar</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#registro_venda">Registrar Pedido de Venda</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#registro_venda" name="btnPesquisar" value="Pesquisar" onclick="GetDados();">Registrar Pedido de Venda</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#consulta_pedido_venda">Consulta de Pedido de Venda</a>
+      <a class="nav-link active" data-bs-toggle="tab" href="#consulta_pedido_venda" name="btnPesquisar" value="Pesquisar" onclick="GetDados();">Consulta de Pedido de Venda</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#faturar_pedido_venda">Faturar um Pedido de Venda</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#faturar_pedido_venda" name="btnPesquisar" value="Pesquisar" onclick="GetDados();">Faturar um Pedido de Venda</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#deletar_registro_venda">Remover Pedido de Venda</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#deletar_registro_venda" name="btnPesquisar" value="Pesquisar" onclick="GetDados();">Remover Pedido de Venda</a>
       </li>
   </ul>
   <div class="tab-content">
@@ -71,32 +79,9 @@
           </form>
       </div>
   </div>
-  <div>
-    <div class="container mt-3">
-      <h2>Pedidos de Venda Cadastrados</h2>
-      <p>Aqui estão listados os pedidos de venda cadastrados em seu banco de dados.</p>            
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Identificador do Pedido de Venda</th>
-            <th>Identificador do Produto</th>
-            <th>Quantidade</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>teste</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>    
+  <div class="container">
+    <div id="result"></div>
   </div>
+  <p class="text-white">space</p>
 </body>
 </html>

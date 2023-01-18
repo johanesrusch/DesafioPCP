@@ -9,13 +9,13 @@
         if($prod_comp == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o nome do produto comprado para incluir o pedido de venda no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                 </SCRIPT>"
             );
         } elseif ($qtd_comp == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher a quantidade comprada para incluir o pedido de venda no banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                 </SCRIPT>"
             );
         } else {
@@ -24,7 +24,7 @@
             if (mysqli_num_rows($result3) == 0) {
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este produto não está cadastrado no banco de dados!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                     </SCRIPT>"
                 );
             } else {
@@ -36,7 +36,7 @@
                 if ($row[1] <= 0) {
                     echo ("<SCRIPT LANGUAGE='JavaScript'>
                         window.alert('Este produto está sem estoque no momento!')
-                        window.location.href='http://localhost/DesafioPCP/index.html';
+                        window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                         </SCRIPT>"
                     );
                 } else {
@@ -45,7 +45,7 @@
 
                     echo ("<SCRIPT LANGUAGE='JavaScript'>
                         window.alert('Pedido de venda inserido com sucesso!')
-                        window.location.href='http://localhost/DesafioPCP/index.html';
+                        window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                         </SCRIPT>"
                     );
                 }
@@ -53,8 +53,8 @@
         } 
     } elseif ($operation == "consulta_pedido_venda") {
         echo ("<SCRIPT LANGUAGE='JavaScript'>
-                window.alert('jlhaBVSCLJAS!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.alert('Você deve inserir o identificador do pedido de venda para consultá-lo!')
+                window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                 </SCRIPT>"
             );
     } else {
@@ -65,13 +65,13 @@
         if($id_venda == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o identificador da venda para remover o pedido de venda do banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                 </SCRIPT>"
             );
         } elseif ($id_produto == null){
             echo ("<SCRIPT LANGUAGE='JavaScript'>
                 window.alert('Você deve preencher o identificador do produto para remover o pedido de venda do banco de dados!!')
-                window.location.href='http://localhost/DesafioPCP/index.html';
+                window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                 </SCRIPT>"
             );
         } else {
@@ -80,7 +80,7 @@
             if (mysqli_num_rows($result2) == 0) {
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Este pedido de venda não está cadastrado no banco de dados!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                     </SCRIPT>"
                 );
             } else {
@@ -88,7 +88,7 @@
                 $result = mysqli_query($link, $delete_reg_venda);
                 echo ("<SCRIPT LANGUAGE='JavaScript'>
                     window.alert('Pedido de venda removido com sucesso!')
-                    window.location.href='http://localhost/DesafioPCP/index.html';
+                    window.location.href='http://localhost/DesafioPCP/pedidos_venda.html';
                     </SCRIPT>"
                 );
             }
