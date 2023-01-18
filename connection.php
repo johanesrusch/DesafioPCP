@@ -1,8 +1,8 @@
 <?php
     $user = "root"; 
     $password = "adminroot"; 
-    $database = "testDATABASE";
-    $hostname = "localhost";
+    $database = "testdatabase";
+    $hostname = "localhost:1403";
 
     $link = new mysqli($hostname, $user, $password, $database);
 
