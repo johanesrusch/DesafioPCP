@@ -30,12 +30,12 @@ function CriaRequest() {
 function GetDados() {
 
     // Declaração de Variáveis
-    var result = document.getElementById("result");
+    var Result = document.getElementById("Result");
     var xmlreq = CriaRequest();
 
 
     // Iniciar uma requisição
-    xmlreq.open("GET", "tabelas_pdv.php", true);
+    xmlreq.open("GET", "tabelaspdv.php", true);
 
     // Atribui uma função para ser executada sempre que houver uma mudança de ado
     xmlreq.onreadystatechange = function(){
@@ -45,9 +45,9 @@ function GetDados() {
 
             // Verifica se o arquivo foi encontrado com sucesso
             if (xmlreq.status == 200) {
-                result.innerHTML = xmlreq.responseText;
+                Result.innerHTML = xmlreq.responseText;
             }else{
-                result.innerHTML = "Erro: " + xmlreq.statusText;
+                Result.innerHTML = "Erro: " + xmlreq.statusText;
             }
         }
     };
